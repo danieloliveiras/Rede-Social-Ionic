@@ -20,6 +20,37 @@ export class TimelinePage {
   posts: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public usuario: UsuarioProvider) {
+    this.logado();
+    this.getPosts()
+  }
+
+  logout(){
+    this.usuario.logout();
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TimelinePage');
+  }
+
+  presentPopover() {
+    const popover = this.popoverCtrl.create(PostarPage);
+    popover.present();
+  }
+
+  logado(){
+    this.usuario.getLogado()
+    .subscribe(
+      data=>{
+        this.user = data;
+        console.log(this.user);
+      },
+      error=>{
+        console.log(error);
+      }
+    )
+  }
+
+  getPosts(){
     this.usuario.getPosts()
     .subscribe(
       data=>{
@@ -30,25 +61,6 @@ export class TimelinePage {
         console.log(error);
       }
     )
-    this.usuario.getLogado()
-    .subscribe(
-      data=>{
-        this.user = data;
-        console.log(this.posts);
-      },
-      error=>{
-        console.log(error);
-      }
-    )
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TimelinePage');
-  }
-
-  presentPopover() {
-    const popover = this.popoverCtrl.create(PostarPage);
-    popover.present();
   }
 
 }

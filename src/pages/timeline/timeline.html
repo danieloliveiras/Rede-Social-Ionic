@@ -1,7 +1,7 @@
 <ion-card color="dark">
 
   <ion-item color="dark">
-    <h2> {{  user.nome }}</h2>
+    <h2> Bem-vindo, {{ user?.nome }}! </h2>
   </ion-item>
 
       <button ion-button icon-start clear small color="light" (click)="presentPopover()">
@@ -18,10 +18,10 @@
 <ion-card>
 
   <ion-item *ngFor="let post of posts">
-    <h2> {{ post.user }} </h2>
+    <h2> usuario </h2>
   </ion-item>
   <ion-card-content>
-    <p> {{ post.texto }}</p>
+    <p> {{ post?.texto }}</p>
   </ion-card-content>
 
 </ion-card>

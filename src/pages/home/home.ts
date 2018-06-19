@@ -10,6 +10,8 @@ import { SigninPage } from '../signin/signin';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  email: string;
+  senha: string;
 
   constructor(public usuario: UsuarioProvider, public navCtrl: NavController) {
 
@@ -23,8 +25,8 @@ export class HomePage {
   //   this.navCtrl.setRoot(TimelinePage);
   // }
 
-  login(email, password){
-    this.usuario.logar(email, password)
+  login(){
+    this.usuario.logar(this.email, this.senha)
       .subscribe(
         data =>{
           console.log(data);
