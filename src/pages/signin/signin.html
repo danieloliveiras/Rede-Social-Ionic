@@ -1,0 +1,20 @@
+<ion-list>
+
+  <ion-item>
+    <ion-label stacked>Nome</ion-label>
+    <ion-input type="text" (input)="nome=nomeinput.value" #nomeinput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="email" (input)="email=emailinput.value" #emailinput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Senha</ion-label>
+    <ion-input type="password" (input)="senha=senhainput.value" #senhainput></ion-input>
+  </ion-item>
+
+  <button ion-button color="dark" full (click)="cadastrar()">Cadastrar</button>
+
+</ion-list>

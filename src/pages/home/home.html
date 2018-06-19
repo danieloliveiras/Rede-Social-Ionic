@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Social+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-list inset>
+
+          <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input type="text" #emailField></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" #passwordField></ion-input>
+          </ion-item>
+        
+        </ion-list>
+      
+      </ion-list>
+      
+      <button ion-button color="dark" (click)="timeline()">Login</button>
+      <button ion-button color="dark" outline (click)="signin()">Signin</button>
+</ion-content>
+
+<!-- (click)="login(emailField.value, passwordField.value)" -->
